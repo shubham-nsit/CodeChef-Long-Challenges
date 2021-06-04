@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+const int MOD=1000000007;
+
+int main()
+{
+    long int t;
+    cin>>t;
+    while(t--)
+    {
+        long int i,n,m;
+        cin>>n>>m;
+        long long ans=1;
+        long long x=2;
+        while (n > 0)
+        {
+            // If n is odd, multiply x with result
+            if (n & 1)
+                ans = (ans*x) % MOD;
+ 
+            // n must be even now
+            n = n>>1; // n = n/2
+            x = (x*x) % MOD;
+        }
+        ans=ans-1;
+        long long res=1;
+        while (m > 0)
+        {
+            // If m is odd, multiply ans with result
+            if (m & 1)
+                res = (res*ans) % MOD;
+ 
+            // m must be even now
+            m = m>>1; // m = m/2
+            ans = (ans*ans) % MOD;
+        }
+        cout<<res<<endl;
+    }
+    return 0;
+}
