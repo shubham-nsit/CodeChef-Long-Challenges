@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    long int t;
+    cin>>t;
+    while(t--)
+    {
+        long int days,gap,P,Q,interval;
+        long long int amount=0;
+        cin>>days>>gap>>P>>Q;
+        interval=days/gap;  
+        /*Divided the question in two parts first 
+          if the days%gap=0 and second if days%gap!=0*/
+        if(days%gap==0)
+        {
+            amount+=P*interval*gap;   // As the series would be (P + P + P + P---  , P+Q + P+Q + P+Q + P+Q ---- , P+2Q + P+2Q + P+2Q + P+2Q ----)
+                                      // Thus total P's would become P*interval*gap
+            amount+=(Q*(interval-1)*(interval)*gap)/2; //Similarly as above
+        }
+        else
+        {
+            long int rem=days%gap;
+            amount+=P*interval*gap;
+            amount+=(Q*(interval-1)*(interval)*gap)/2; //Till here same as previous if case
+            amount+=(P+(interval*Q))*rem; //Ending sub part left would be added (P+interval*Q) would be each element and it would be added
+                                          //To the remainder of the part 
+        }
+        cout<<amount<<endl;
+    }
+    return 0;
+}
