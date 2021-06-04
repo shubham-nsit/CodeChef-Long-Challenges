@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int xa,xb,X_A,X_B;
+        cin>>xa>>xb>>X_A>>X_B;
+        int ans=0;
+        ans=X_A/xa;  //Calculating Coconuts required for water
+        ans+=X_B/xb; //Calculating Coconuts required for Cononut Pulp
+        cout<<ans<<endl;
+    }
+    return 0;
+}
