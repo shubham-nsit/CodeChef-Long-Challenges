@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	long int T,x,y,k,i;
+	scanf("%ld",&T);
+	while(T--)
+	{
+	    scanf("%ld %ld %ld",&x,&y,&k);
+	    x=x+y;
+	    long int z = x/k;
+        if(z%2==0)
+            printf("Chef\n");
+        else
+            printf("Paja\n");
+            
+	    /*for(i=0;i<x;i+2)
+	    {
+	               
+	    }*/
+	}
+	return 0;
+}
+
