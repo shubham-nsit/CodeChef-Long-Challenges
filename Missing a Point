@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int T;
+	cin>>T;
+	while(T--)
+	{
+	    long int N,j;
+	    cin>>N;
+	    unordered_set<long int> x_axis,y_axis;
+	    long int x_coordinate,y_coordinate;
+	    for(j=0;j<((4*N)-1);j++)
+	    {
+	        cin>>x_coordinate>>y_coordinate;
+	        
+	        if(x_axis.count(x_coordinate))
+	        {
+	            x_axis.erase(x_coordinate);
+	        }
+	        else
+	        {
+	            x_axis.insert(x_coordinate);
+	        }
+	        
+	        if(y_axis.count(y_coordinate))
+	        {
+	            y_axis.erase(y_coordinate);
+	        }
+	        else
+	        {
+	            y_axis.insert(y_coordinate);
+	        }
+	    }
+	    
+	    cout<<(*x_axis.begin())<<" "<<(*y_axis.begin())<<"\n";
+	}
+	return 0;
+}
