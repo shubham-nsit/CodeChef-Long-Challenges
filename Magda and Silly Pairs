@@ -1,0 +1,63 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	long int T,i,n,s;
+	scanf("%ld",&T);
+	while(T--)
+	{
+	    scanf("%ld",&n);
+	    long int a[n],b[n];
+	    long int j=0,k=0,ae[n],ao[n],sum=0;
+	    for(i=0;i<n;i++)
+	    {   
+	        scanf("%ld",&a[i]);
+	        if(a[i]%2==0)
+	        {
+	            ae[j]=a[i];
+	            j++;
+	        }
+	        else
+	        {
+	            ao[k]=a[i];
+	            k++;
+	        }
+	    }
+	    //j=0;
+	    //k=0;
+	    for(i=0;i<n;i++)
+	    {
+	        scanf("%ld",&b[i]);
+	        if(b[i]%2==0)
+	        {
+	            
+	            if(j>0)
+	            {j--;
+	            s=(ae[j]+b[i])/2;
+	            sum=sum+s;}
+	            //j++;
+	            else
+	            {k--;
+	            s=(ao[k]+b[i])/2;
+	            sum = sum + s;}
+	        }
+	        else
+	        {   
+	            if(k>0)
+	            {
+	            k--;
+	            s=(ao[k]+b[i])/2;
+	            sum=sum+s;}
+	            else
+	            {j--;
+	            s=(ae[j]+b[i])/2;
+	                sum = sum + s;
+	            }
+	            
+	        }
+	    }
+	    printf("%ld\n",sum);
+	}
+	return 0;
+}
+
