@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	long int t;
+	scanf("%ld",&t);
+	while(t--)
+	{
+	    long long int s,n,count=0,x;
+	    scanf("%lld %lld",&s,&n);
+	    if(s==1)
+	    {
+	        printf("%d \n",1);
+	    }
+	    else
+	    {
+	        if(s<=n)
+	        {
+	            if(s%2==0)
+	            {
+	                printf("%d \n",1);
+	            }
+	            else
+	            {
+	                printf("%d \n",2);
+	            }
+	        }
+	        else
+	        {
+	            if(s%n==0)
+	            {
+	                count=s/n;
+	                printf("%lld \n",count);
+	            }
+	            else if(s%2==0)
+	            {
+	                count=s/n;
+	                count=count+1;
+	                printf("%lld \n",count);
+	            }
+	            else
+	            {
+	                count=s/n;
+	                x=s-(count*n);
+	                if(x>1 && x%2!=0)
+	                {
+	                    count=count+2;
+	                }
+	                else
+	                {
+	                    count=count+1;
+	                }
+	                printf("%lld \n",count);
+	            }
+	        }
+	    }
+	}
+	return 0;
+}
+
