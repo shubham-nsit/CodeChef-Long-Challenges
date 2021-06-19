@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int n,b,m;
+	    scanf("%d %d %d",&n,&b,&m);
+	    int i,x[m];
+	    for(i=0;i<m;i++)
+	    {
+	        scanf("%d",&x[i]);
+	    }
+	    /*if(b>=n)
+	    {
+	        printf(1);
+	        printf("\n");
+	        continue;
+	    }*/
+	    int count=1,diff,lower,higher;
+	    diff=x[0]%b;
+	    lower=x[0]-diff;
+	    higher=lower+(b-1);
+	    
+	    for(i=1;i<m;i++)
+	    {
+	        if(x[i]>=lower && x[i]<=higher)
+	        {
+	            continue;
+	        }
+	        else
+	        {
+	            count++;
+	            diff=x[i]%b;
+	            lower=x[i]-diff;
+	            higher=lower+(b-1);
+	        }
+	    }
+	    printf("%d\n",count);
+	}
+	return 0;
+}
+
