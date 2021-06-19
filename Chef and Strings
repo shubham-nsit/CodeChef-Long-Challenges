@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    long int n;
+	    scanf("%ld",&n);
+	    long int s[n];
+	    long int i,count=0,diff;
+	    for(i=0;i<n;i++)
+	    {
+	        scanf("%ld",&s[i]);
+	    }
+	    for(i=0;i<n-1;i++)
+	    {
+	        diff=abs(s[i]-s[i+1]);
+	        if(diff>1)
+	        {
+	            diff--;
+	            count=count+diff;
+	        }
+	    }
+	    printf("%ld \n",count);
+	}
+	return 0;
+}
+
