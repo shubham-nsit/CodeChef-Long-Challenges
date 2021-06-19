@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main(void) {
+    // your code goes here
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        long int n,count,temp;
+        scanf("%ld",&n);
+        count=n;
+        temp=n;
+        long int i,j=1,x[n],y[n];
+        for(i=0;i<n;i++)
+        {
+            scanf("%ld %ld",&x[i],&y[i]);
+        }
+        if(n<=5)
+        {
+            printf("%ld \n",n);
+        }
+        else 
+        {
+            while(j!=0)
+            {
+                temp=temp/2;
+                if(temp>=3)
+                {
+                    count=count+temp;
+                }
+                else 
+                {
+                    j=0;
+                }
+            }
+            printf("%ld \n",count);
+        }
+    }
+    return 0;
+}
+
+
+
+    
