@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	long int t;
+	scanf("%ld",&t);
+	while(t--)
+	{
+	    long int pc,pr,chef,rick;
+	    scanf("%ld %ld",&pc,&pr);
+	    if(pc%9==0)
+	    {
+	        chef=pc/9;
+	    }
+	    else
+	    {
+	        chef=1+(pc/9);
+	    }
+	    
+	    if(pr%9==0)
+	    {
+	        rick=pr/9;
+	    }
+	    else
+	    {
+	        rick=1+(pr/9);
+	    }
+	    
+	    if(rick<=chef)
+	    {
+	        printf("1 %ld\n",rick);
+	    }
+	    else
+	    {
+	        printf("0 %ld\n",chef);
+	    }
+	    
+	}
+	return 0;
+}
+
