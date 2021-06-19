@@ -1,0 +1,82 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int con(string p)
+{
+    string hours=p.substr(0,2);
+    string minutes=p.substr(3,5);
+    int hrs=stoi(hours);
+    //cout<<hrs<<endl;
+    char c=p[5];
+    if(c=='A')
+    {
+        if(hrs==12)
+        {
+            hrs=0;
+        }
+    }
+    else
+    {
+        if(hrs!=12)
+        {
+            hrs=hrs+12;
+        }
+    }
+    
+    int min=stoi(minutes);
+    //cout<<min<<endl;
+    int time=hrs*100+min;
+    //cout<<time<<endl;
+    return time;
+}
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int j,i,n,my_time,not_my1,not_my2;
+        string my="";
+        string a="";
+        char c;
+        for(i=0;i<7;i++)
+        {
+            cin>>c;
+            my.push_back(c);
+        }
+        //cout<<p<<endl;
+        my_time=con(my);
+        //cout<<my_time;
+        cin>>n;
+        for(j=0;j<n;j++)
+        {
+            string n_my1="";
+            string n_my2="";
+            for(i=0;i<7;i++)
+            {
+                cin>>c;
+                n_my1.push_back(c);
+            }
+            not_my1=con(n_my1);
+            for(i=0;i<7;i++)
+            {
+                cin>>c;
+                n_my2.push_back(c);
+            }
+            not_my2=con(n_my2);
+            if(my_time>=not_my1 && not_my2>=my_time)
+            {
+                a=a+"1";
+            }
+            else
+            {
+                a=a+"0";
+            }
+            
+        }
+        cout<<a<<endl;
+        
+    }
+    return 0;
+}
