@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+int getSum(long int n) 
+{  
+   int sum = 0; 
+   while (n != 0) 
+   { 
+       sum = sum + n % 10; 
+       n = n/10; 
+   } 
+   return sum; 
+} 
+
+
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int n;
+	    scanf("%d",&n);
+	    long int i,a[n],b[n];
+	    long int chef=0,monty=0;
+	    for(i=0;i<n;i++)
+	    {
+	        scanf("%ld %ld",&a[i],&b[i]);
+	        if(getSum(a[i])>getSum(b[i]))
+	        {
+	            chef++;
+	        }
+	        else if(getSum(a[i])<getSum(b[i]))
+	        {
+	            monty++;
+	        }
+	        else if(getSum(a[i])==getSum(b[i]))
+	        {
+	            chef++;
+	            monty++;
+	        }
+	    }
+	    if(chef>monty)
+	    {
+	        printf("%d %ld\n",0,chef);
+	    }
+	    else if(chef<monty)
+	    {
+	        printf("%d %ld\n",1,monty);
+	    }
+	    else if(chef==monty)
+	    {
+	        printf("%d %ld\n",2,chef);
+	    }
+	}
+	return 0;
+}
+
