@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main(void) {
+	int T,N,i;
+	long int x;
+	scanf("%d",&T);
+	while(T--) {
+	    scanf("%d %ld",&N,&x);
+	    char str[N];
+	    int cal=0;
+	    long int cnt[N+1];
+	    cnt[N]=x;
+	    scanf("%s",str);
+	    for(i=0;i<N;i++) {
+	        if(str[i]=='L')
+	        {
+	            x=x-1;
+	            cnt[i]=x;
+	        }
+	        else if(str[i]=='R')
+	        {
+	            x=x+1;
+	            cnt[i]=x;
+	        }
+	    }
+	    for(i=0;i<=N;i++) {
+	        int j;
+	        for(j=0;j<i;j++) 
+	            if(cnt[i]==cnt[j])
+	            break;
+	        
+	        if(i==j)    
+	        cal++;
+	        }
+	        printf("%d\n",cal);
+	    }
+	
+	return 0;
+}
+
