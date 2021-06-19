@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int n,five=0,ten=0,i,j=0;
+	    scanf("%d",&n);
+	    int a[n];
+	    for(i=0;i<n;i++)
+	    {
+	        scanf("%d",&a[i]);
+	        
+	        if(a[i]==5)
+	        {
+	            five++;
+	        }
+	        else if(a[i]==10)
+	        {
+	            ten++;
+	            if(five==0)
+	            {
+	                j=-1;
+	                //break;
+	            }
+	            else
+	            {
+	                five--;
+	            }
+	        }
+	        else if(a[i]==15)
+	        {
+	            if(ten!=0)
+	            {
+	                ten--;
+	            }
+	            else if(five>=2)
+	            {
+	                five=five-2;
+	            }
+	            else
+	            {
+	                j=-1;
+	                //break;
+	            }
+	        }
+	    }
+	    if(j==-1)
+	    {
+	        printf("NO\n");
+	    }
+	    else
+	    {
+	        printf("YES\n");
+	    }
+	}
+	return 0;
+}
+
