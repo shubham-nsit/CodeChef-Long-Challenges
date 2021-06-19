@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include<string.h>
+
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int n;
+	    scanf("%d",&n);
+	    char str[n];
+	    scanf("%s",str);
+	    if(n%2==0)
+	    {
+	        int c=0,count[26]={0},x,ctr=0;
+	        while(str[c]!='\0')
+	        {
+	            x=str[c] - 'a';
+	            count[x]++;
+	            c++;
+	        }
+	        for(c=0;c<26;c++)
+	        {
+	            if(count[c]%2==0)
+	            {
+	                ctr=1;
+	            }
+	            else
+	            {
+	                ctr=0;
+	                printf("NO \n");
+	                break;
+	            }
+	        }
+	        if(ctr==1)
+	        {
+	            printf("YES \n");
+	        }
+	    }
+	    else 
+	    {
+	        printf("NO \n");
+	    }
+	}
+	return 0;
+}
+
