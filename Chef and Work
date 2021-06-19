@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main(void) {
+    // your code goes here
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int n,k;
+        scanf("%d %d",&n,&k);
+        int w[n],i,j,max=0,count=1,a=0;
+        for(i=0;i<n;i++)
+        {
+            scanf("%d",&w[i]);
+            if(w[i]>k)
+            {
+                max=1;
+            }
+        }
+        if(max==1)
+        {
+            printf("-1 \n");
+        }
+        else
+        {
+            for(j=0;j<n;j++)
+            {
+                a=a+w[j];
+                if(a>k)
+                {
+                    count++;
+                    a=w[j];
+                }
+            }
+            printf("%d\n",count);
+            
+        }
+    }
+    return 0;
+}
