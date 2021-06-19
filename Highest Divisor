@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,x=10;
+    cin>>n;
+    while(x!=0)
+    {
+        if(n%x==0)
+        {
+            break;
+        }
+        else
+        {
+            x--;
+        }
+    }
+    cout<<x;
+    return 0;
+}
