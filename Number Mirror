@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main(void) {
+    long int n;
+    scanf("%ld \n",&n);
+    printf("%ld",n);
+	// your code goes here
+	return 0;
+}
+
