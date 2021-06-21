@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	long int t;
+	cin>>t;
+	float lim=9.575;
+	while(t--)
+	{
+	    float k_1,k_2,k_3,v,ans=0.0;
+	    cin>>k_1>>k_2>>k_3>>v;
+	    ans=(((k_1*k_2)*k_3)*v);
+	    ans=100/ans;
+	    if(ans<lim)
+	    {
+	        cout<<"YES \n";
+	    }
+	    else
+	    {
+	        cout<<"NO \n";
+	    }
+	}
+	return 0;
+}
