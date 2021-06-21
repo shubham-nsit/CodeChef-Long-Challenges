@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    long long t;
+    cin>>t;
+    while(t--)
+    {
+        long long n,m;
+        cin>>n>>m;
+        long long answer=0;
+        vector<long long> modular(n+1,1);
+        for(long long i=2;i<=n;i++)
+        {
+            long long a=m%i;
+            answer+=modular[a];
+            for(long long j=a;j<=n;j+=i)
+            {
+                modular[j]++;
+            }
+        }
+        cout<<answer<<endl;
+    }
+    return 0;
+}
