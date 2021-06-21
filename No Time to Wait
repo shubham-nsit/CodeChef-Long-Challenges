@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+        int n,h,x;
+        cin>>n>>h>>x;
+        int i,j=0,max=0;
+        for(i=0;i<n;i++)
+        {
+            cin>>j;
+            if(max<j)
+            {
+                max=j;
+            }
+
+        }
+        int ans=0;
+        ans=max+x;
+        if(ans>=h)
+        {
+            cout<<"YES \n";
+        }
+        else
+        {
+            cout<<"NO \n";
+        }
+    return 0;
+}
