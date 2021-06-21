@@ -1,0 +1,29 @@
+#include <cstdio>
+#include <cstring>
+using namespace std;
+int main() 
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int response=0;
+        long int i=1;
+        while(response!=1 || response!=-1)
+        {
+            printf("%ld\n",i*i);
+            fflush(stdout);
+            i=i+1;
+            scanf("%d", &response);
+            if(response==1 || response==-1)
+            {
+                break;
+            }
+            if(i>1000)
+            {
+                break;
+            }
+        }
+    }
+    return 0;
+}
