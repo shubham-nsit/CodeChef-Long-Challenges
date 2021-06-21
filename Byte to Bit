@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<math.h>
+
+int main(void)
+{
+    int n,t;
+    long int bit=0,nib=0,byte=0,temp;
+    scanf("%d",&t);
+    while(t--)
+    {
+        scanf("%d",&n);
+        n=n-1;
+        bit=1;
+        bit<<=(n/26);  //<< (Left shift operator) since pow failing in cases of large nos.
+        temp=n%26;
+        if(temp<2)
+        {
+            nib=0;
+            byte=0;
+        }
+        else if(temp<10)
+        {
+            nib=bit;
+            byte=0;
+            bit=0;
+        }
+        else if(temp<26)
+        {
+            byte=bit;
+            nib=0;
+            bit=0;
+        }
+         printf("%ld %ld %ld\n",bit,nib,byte);
+    }
+
+    return 0;
+}
+
